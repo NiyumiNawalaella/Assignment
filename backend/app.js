@@ -6,6 +6,11 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const PORT = 8000;
 
+//calling db.js file the database connection
+require('dotenv').config();
+require('./db');
+
+//server connection
 app.use(bodyParser.json());
 const allowedOrigins = ['http://localhost:3000']; //add more origins as needed
 app.use(
