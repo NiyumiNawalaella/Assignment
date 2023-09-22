@@ -1,9 +1,13 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
+import userRouter from "./routes/user-routes";
 
 dotenv.config();
 const app = express();
+
+//middlewares
+app.use("/user", userRouter);
 
 //connecting to localhost Port which is 5000 and database
 mongoose.connect(
